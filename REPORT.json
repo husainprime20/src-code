@@ -1,0 +1,592 @@
+{
+  "format": 1,
+  "mode": "read-only-native-ui-diagnostic",
+  "installation_modified": false,
+  "binary_included": false,
+  "player_bytes": 24694784,
+  "player_sha256": "e37b1f1467f6e9fdae123c7ceb4370cbaf2b4916f0ebdc47aa5bdd46de14a045",
+  "resources": {
+    "PlrSidebar.qml": {
+      "bytes": 75869,
+      "sha256": "5c2f21fa9e82e6b519b5c7cf7029c335d364e4a142b9a592a2236db891c335df"
+    },
+    "UiSettingsWindow.qml": {
+      "bytes": 11133,
+      "sha256": "86da4911811600c097de4051c64af66b4fe93a61f8c421927f198fc1e3efc310"
+    }
+  },
+  "compiled_preflight": "owner checks passed (RAM only; no file write)",
+  "settings_qml_inventory": [
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiRadioButton.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "PlrPreferencesSetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "PlrGameSetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "PlrAboutSetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiText.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "MnsMacroSettingsWindow.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "PlrGamepadSetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "PlrAudioSetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "PlrWebEngineView.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiDisplaySetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiTextUrl.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "PlrUserDataSetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiToggleButton.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "PlrAdvancedSetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiSettingsButton.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiSettingsWindow.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiTextImageField.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "PlrShortcutsSetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiPerformanceSetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiImageComboBox.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiMultiTextComboBox.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiGraphicsSetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "PlrDeviceSetting.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "KmmEditorControlSettings.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "PlrAppImagePreferenceWindow.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiCheckBox.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiComboBox.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiTextField.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiSlider.qml"
+    },
+    {
+      "container": "HD-Player.exe",
+      "resource": "UiButton.qml"
+    },
+    {
+      "container": "Qt6QuickControls2Basic.dll",
+      "resource": "qt-project.org/imports/QtQuick/Controls/Basic/RadioButton.qml"
+    },
+    {
+      "container": "Qt6QuickControls2Basic.dll",
+      "resource": "qt-project.org/imports/QtQuick/Controls/Basic/Slider.qml"
+    },
+    {
+      "container": "Qt6QuickControls2Basic.dll",
+      "resource": "qt-project.org/imports/QtQuick/Controls/Basic/RangeSlider.qml"
+    },
+    {
+      "container": "Qt6QuickControls2Basic.dll",
+      "resource": "qt-project.org/imports/QtQuick/Controls/Basic/CheckBox.qml"
+    },
+    {
+      "container": "Qt6QuickControls2Basic.dll",
+      "resource": "qt-project.org/imports/QtQuick/Controls/Basic/ComboBox.qml"
+    }
+  ],
+  "settings_qml_exports": [
+    {
+      "file": "NativeSettings/888255057193ddb7/UiRadioButton.qml",
+      "sha256": "3b01f9656be9bd2fd41b48d1dead2c781d3295d895a0626d726492f548005278",
+      "bytes": 1378
+    },
+    {
+      "file": "NativeSettings/e585a0bb160b1d7d/PlrPreferencesSetting.qml",
+      "sha256": "73dd453017837d236b4cb2d66d7bd3a9a2a5990fbea238aa5a3aeba6a5b3cee0",
+      "bytes": 65215
+    },
+    {
+      "file": "NativeSettings/15f75648cf01d239/PlrGameSetting.qml",
+      "sha256": "0e11209d79b8319d51602a74c475d13a1aa5b75a61d26e9381885c2225321ec4",
+      "bytes": 11793
+    },
+    {
+      "file": "NativeSettings/a93d4f1d99652a4f/PlrAboutSetting.qml",
+      "sha256": "2add2bc3a127695e46d0d6012b0007e41e3b85f7106b5b9358b0221231b2997e",
+      "bytes": 5582
+    },
+    {
+      "file": "NativeSettings/91bb0b81faca92c5/UiText.qml",
+      "sha256": "303c68897c04cfd11aa032ad6fb800b5b2bead2f779af2940356c0994fc104c1",
+      "bytes": 713
+    },
+    {
+      "file": "NativeSettings/f6a9773591c01b5c/MnsMacroSettingsWindow.qml",
+      "sha256": "2336b62ae8682a62bc4c80d6dc5408a8eb945bed7f83a44c962a2d858630d3ef",
+      "bytes": 30205
+    },
+    {
+      "file": "NativeSettings/554e2e7ebf22dc3b/PlrGamepadSetting.qml",
+      "sha256": "447d293d55c84320bd6dff9b5d09dbd8134d5bdf464e5881298800d734301c7f",
+      "bytes": 10400
+    },
+    {
+      "file": "NativeSettings/90e173404fc35908/PlrAudioSetting.qml",
+      "sha256": "89dcefde12fdbaf90c54867e43b518076b7560f2b0b744efeec896ca6cd30daa",
+      "bytes": 12838
+    },
+    {
+      "file": "NativeSettings/7e8057732d10dd04/PlrWebEngineView.qml",
+      "sha256": "c260a1873e00d6d2cecd22dfb907eb498f882a7f71ed799f2e89eb06b36dcd5b",
+      "bytes": 6104
+    },
+    {
+      "file": "NativeSettings/76f75a15619b896c/UiDisplaySetting.qml",
+      "sha256": "21bf20035fddc19f30b280aa0271f3db21c143232462d0082975144e34105e89",
+      "bytes": 49154
+    },
+    {
+      "file": "NativeSettings/659a4cb3df313f17/UiTextUrl.qml",
+      "sha256": "c54b8ec958c9dd3cbda2771edadb06e6a31a746ebfb819896ec77192a16ecc75",
+      "bytes": 614
+    },
+    {
+      "file": "NativeSettings/df54dd1589a43a9e/PlrUserDataSetting.qml",
+      "sha256": "96836d1cdeb78e37e2e2276d7f8826aa7c2e81499700c24cbfc54513f52be9ee",
+      "bytes": 14402
+    },
+    {
+      "file": "NativeSettings/4f2df976e3d41110/UiToggleButton.qml",
+      "sha256": "5a098a9686733c63e08699485bfc42fb475335d75f63bd6ed40120eb4fd3583b",
+      "bytes": 2562
+    },
+    {
+      "file": "NativeSettings/eb5895238dabb021/PlrAdvancedSetting.qml",
+      "sha256": "7aabf6b1e17ea16b49fbc34a399be8933f5a01b64fb40aa80d7798eb86dca06e",
+      "bytes": 13636
+    },
+    {
+      "file": "NativeSettings/ed17ccbb3182308f/UiSettingsButton.qml",
+      "sha256": "3452b0a04b7ac0ed73973bbabf2bfbd73df4568f719b8ba04f33818a9cfe85f6",
+      "bytes": 2040
+    },
+    {
+      "file": "NativeSettings/7e76b36ee7c95aca/UiSettingsWindow.qml",
+      "sha256": "86da4911811600c097de4051c64af66b4fe93a61f8c421927f198fc1e3efc310",
+      "bytes": 11133
+    },
+    {
+      "file": "NativeSettings/a415c2b0851ad601/UiTextImageField.qml",
+      "sha256": "8eff1a09cbf148e4dd2dcb264234daea94826c52ca44c8d6654cfb8a801b1711",
+      "bytes": 879
+    },
+    {
+      "file": "NativeSettings/a3d11ba253cf5cda/PlrShortcutsSetting.qml",
+      "sha256": "1162164576f39727d16b5491add7c415dc28b9aafa6197e8e7353ed46e6aca38",
+      "bytes": 22078
+    },
+    {
+      "file": "NativeSettings/9a976529e125f54f/UiPerformanceSetting.qml",
+      "sha256": "3b4815d7904ab325cba14b789b4624f61f2c10054a04d2bb917ab1b1fd03f01d",
+      "bytes": 32770
+    },
+    {
+      "file": "NativeSettings/6b25e598bd23b1b0/UiImageComboBox.qml",
+      "sha256": "c780dba4cf9b6d535924d28b930a9b3d85d0d2b6dfc355f9dfa82db52865275d",
+      "bytes": 5861
+    },
+    {
+      "file": "NativeSettings/f5d6a00625419498/UiMultiTextComboBox.qml",
+      "sha256": "2548126916efa230ac33cbe05815bbb3636ee54b43403c9910fce251c2580394",
+      "bytes": 6795
+    },
+    {
+      "file": "NativeSettings/f553a77a16e1c660/UiGraphicsSetting.qml",
+      "sha256": "2f45676b10b62a135d34d8fe43ef62db493a70b7240ffb5b0f1672a2d0ddaf76",
+      "bytes": 23472
+    },
+    {
+      "file": "NativeSettings/173e2ec2c895c247/PlrDeviceSetting.qml",
+      "sha256": "0837eb9c18fc08d257b7c4e7f53275330c8352f65d21786f50c2f666115150bd",
+      "bytes": 31474
+    },
+    {
+      "file": "NativeSettings/7cc1eef1676364ef/KmmEditorControlSettings.qml",
+      "sha256": "ce36790c424ce4991cc91ca259690e9f3f571f27462ed92543c17cfde62a24a1",
+      "bytes": 103780
+    },
+    {
+      "file": "NativeSettings/4cb6348cc2acd842/PlrAppImagePreferenceWindow.qml",
+      "sha256": "71c64ad8cf7dd8f4a5026dbeb4f8f2515aa683cac1e46f138633e4419649f9f5",
+      "bytes": 13030
+    },
+    {
+      "file": "NativeSettings/93fd2fc4e0ec78a1/UiCheckBox.qml",
+      "sha256": "e322deca54f1c89dcd360b2a8c997f47fbbbb3da05c38282f5d9add4e1e00701",
+      "bytes": 1271
+    },
+    {
+      "file": "NativeSettings/ef7d3f5e2814f9df/UiComboBox.qml",
+      "sha256": "6830eec9db9c12b22e56f69e6003bc6fd92dedf8d7be321da31131f1ebd91864",
+      "bytes": 4939
+    },
+    {
+      "file": "NativeSettings/ad9d34265ea6b23a/UiTextField.qml",
+      "sha256": "ba30a30e0a2c49ddbe6e20f74939ce826d2c60cfea3bd10265eb2d603e75a4c7",
+      "bytes": 4949
+    },
+    {
+      "file": "NativeSettings/655b7968ecde9e50/UiSlider.qml",
+      "sha256": "de8b96a439cf12db450cb76e1d9e913eb6b54ab5d8cfa002f5a0d9131bb87568",
+      "bytes": 3727
+    },
+    {
+      "file": "NativeSettings/ab4988bd874321e6/UiButton.qml",
+      "sha256": "cf3af7e7b223249320238cc5f86e2c30da710fb3a2450244f4203fdd2ae7b223",
+      "bytes": 4418
+    },
+    {
+      "file": "NativeSettings/e35632fc5d201802/RadioButton.qml",
+      "sha256": "8c4700f6f454730fe19f072c6f921ac5f1ccc3e04f5c24cc08cbdf18c780668e",
+      "bytes": 2043
+    },
+    {
+      "file": "NativeSettings/57fd2cd33e881763/Slider.qml",
+      "sha256": "2af56aafda0a9575cd651668918f816b42a5ef66485a4edd9f5dd9c728905cc0",
+      "bytes": 2253
+    },
+    {
+      "file": "NativeSettings/e900c6d88c087f02/RangeSlider.qml",
+      "sha256": "bdbead55f5a49eddd6c61d7749d361dcc5a1e07aa4b4b53159fd79f71b8cc0b7",
+      "bytes": 3335
+    },
+    {
+      "file": "NativeSettings/1370ec76775b7950/CheckBox.qml",
+      "sha256": "82f34e380c06238cc94c7592dce6e17f917900a3c9b0c4020e6d29d8c5d940b3",
+      "bytes": 2356
+    },
+    {
+      "file": "NativeSettings/6a88869d15482d7c/ComboBox.qml",
+      "sha256": "d663f999aa5b51e31233d148c1243f00cb42856b0381a787c62dcd1dcaa920a3",
+      "bytes": 4247
+    }
+  ],
+  "settings_qml_errors": [],
+  "settings_qml_export_limit": "256 files, 8 MiB total, 512 KiB per file; sources only",
+  "ui_state": {
+    "exists": true,
+    "resources": [
+      {
+        "name": "PlrSidebar.qml",
+        "tracked": true,
+        "expected_sha256": "806f63a0cc1d23d5bfb16ee456257774e8b6aee496abacb95a5d7e6000984775",
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "5c2f21fa9e82e6b519b5c7cf7029c335d364e4a142b9a592a2236db891c335df",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "UiSettingsWindow.qml",
+        "tracked": true,
+        "expected_sha256": "f7fc8213e95da26a671d0f609c27fcfb71195ae68142876c9346acd503357cee",
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "86da4911811600c097de4051c64af66b4fe93a61f8c421927f198fc1e3efc310",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "UiPerformanceSetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "3b4815d7904ab325cba14b789b4624f61f2c10054a04d2bb917ab1b1fd03f01d",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "UiDisplaySetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "21bf20035fddc19f30b280aa0271f3db21c143232462d0082975144e34105e89",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "UiGraphicsSetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "2f45676b10b62a135d34d8fe43ef62db493a70b7240ffb5b0f1672a2d0ddaf76",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "PlrAboutSetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "2add2bc3a127695e46d0d6012b0007e41e3b85f7106b5b9358b0221231b2997e",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "PlrAdvancedSetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "7aabf6b1e17ea16b49fbc34a399be8933f5a01b64fb40aa80d7798eb86dca06e",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "PlrAudioSetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "89dcefde12fdbaf90c54867e43b518076b7560f2b0b744efeec896ca6cd30daa",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "PlrDeviceSetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "0837eb9c18fc08d257b7c4e7f53275330c8352f65d21786f50c2f666115150bd",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "PlrGameSetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "0e11209d79b8319d51602a74c475d13a1aa5b75a61d26e9381885c2225321ec4",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "PlrGamepadSetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "447d293d55c84320bd6dff9b5d09dbd8134d5bdf464e5881298800d734301c7f",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "PlrPreferencesSetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "73dd453017837d236b4cb2d66d7bd3a9a2a5990fbea238aa5a3aeba6a5b3cee0",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "PlrShortcutsSetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "1162164576f39727d16b5491add7c415dc28b9aafa6197e8e7353ed46e6aca38",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      },
+      {
+        "name": "PlrUserDataSetting.qml",
+        "tracked": false,
+        "expected_sha256": null,
+        "observed": [
+          {
+            "container": "HD-Player.exe",
+            "sha256": "96836d1cdeb78e37e2e2276d7f8826aa7c2e81499700c24cbfc54513f52be9ee",
+            "core_marker": false,
+            "page_marker": false
+          }
+        ],
+        "digest_matches": false
+      }
+    ],
+    "assets": [
+      {
+        "name": "Assets/VOIDReferenceUI/Icons.js",
+        "expected_sha256": "b2ab94c0a926a72ea312338ad59a5369c8e0491f43e55394cb7415958d9a40c9",
+        "actual_sha256": "b2ab94c0a926a72ea312338ad59a5369c8e0491f43e55394cb7415958d9a40c9",
+        "digest_matches": true
+      },
+      {
+        "name": "Assets/VOIDReferenceUI/NativeControlStyle.qml",
+        "expected_sha256": "bdd445f042ee0274f563ec6f4b4fcac8c1da98e78d469fad68a693f5eed6ba70",
+        "actual_sha256": "bdd445f042ee0274f563ec6f4b4fcac8c1da98e78d469fad68a693f5eed6ba70",
+        "digest_matches": true
+      },
+      {
+        "name": "Assets/VOIDReferenceUI/Navigation.js",
+        "expected_sha256": "5e3ed8785c43f7e9cd12f9b4ccae085c208fcf8f9e8c863244a95bb22de5b559",
+        "actual_sha256": "5e3ed8785c43f7e9cd12f9b4ccae085c208fcf8f9e8c863244a95bb22de5b559",
+        "digest_matches": true
+      },
+      {
+        "name": "Assets/VOIDReferenceUI/OptimizerPage.qml",
+        "expected_sha256": "112068c68c7fd9213d372f04d37834ec834f71d502c75a3c279de3c45d3c41ba",
+        "actual_sha256": "112068c68c7fd9213d372f04d37834ec834f71d502c75a3c279de3c45d3c41ba",
+        "digest_matches": true
+      },
+      {
+        "name": "Assets/VOIDReferenceUI/SettingsShell.qml",
+        "expected_sha256": "307c691ac62eaa8a173df88963783b813f536aef065f04021c44389d45c0f0de",
+        "actual_sha256": "307c691ac62eaa8a173df88963783b813f536aef065f04021c44389d45c0f0de",
+        "digest_matches": true
+      },
+      {
+        "name": "Assets/VOIDReferenceUI/SidebarSkin.qml",
+        "expected_sha256": "449e0e2f56c71c62ab988f4d29e03bdc2e10027ba7b5580acee562109aca3418",
+        "actual_sha256": "449e0e2f56c71c62ab988f4d29e03bdc2e10027ba7b5580acee562109aca3418",
+        "digest_matches": true
+      },
+      {
+        "name": "Assets/VOIDReferenceUI/SidebarVisual.qml",
+        "expected_sha256": "bdd5388a1cc7f2df313845bdacd9a3fa0d2624d7bdab60ed37c7b2d392b1aff6",
+        "actual_sha256": "bdd5388a1cc7f2df313845bdacd9a3fa0d2624d7bdab60ed37c7b2d392b1aff6",
+        "digest_matches": true
+      }
+    ],
+    "file_sha256": "0290b645253552a149a971c6ec607d81e731c74b2d11d4c1692384af8819cd15",
+    "format": 1,
+    "edition": null,
+    "installation_matches": true,
+    "assets_url_matches": true,
+    "unexpected_resource_count": 0
+  },
+  "diagnostic_revision": 2
+}
