@@ -16,6 +16,9 @@ import DialogButtonModelList 1.0
 import UiDialogWindow 1.0
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+id: voidNativeSettingsPage
+
     property bool pCompLoaded: false
     property bool pEnableSave: false
     property var pRecommendedResolution: ["1920 x 1080", "1080 x 1920", "2560 x 1080"]
@@ -176,12 +179,12 @@ Item {
             }
 
             id: iContentLayout
-            width: 520
+            width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
             Layout.alignment: Qt.AlignTop
-            spacing: 16
+            spacing: 12
             Rectangle {
                 Layout.preferredHeight: 1
-                color: UiTheme.colors.seperator
+                color: "#303034"
                 Layout.fillWidth: true
             }
 
@@ -191,8 +194,8 @@ Item {
                 spacing: 12
                 Text {
                     text: qsTranslate("QObject", "Mouse cursor style")
-                    font :UiTheme.fonts.bodyLarge
-                    color: UiTheme.colors.primary10
+                    font :Qt.font({family:"Segoe UI",pixelSize:12})
+                    color: "#eeeef2"
                 }
 
                 UiRowLayout {
@@ -217,7 +220,7 @@ Item {
                                 horizontalAlignment: Text.AlignLeft
                                 text: iDefaultCursor.text
                                 font: iDefaultCursor.pSize.textFont
-                                color: UiTheme.colors.primary20
+                                color: "#c7c7ce"
                                 wrapMode: Text.Wrap
                             }
                         }
@@ -242,7 +245,7 @@ Item {
                                 horizontalAlignment: Text.AlignLeft
                                 text: iCustomCursor.text
                                 font: iCustomCursor.pSize.textFont
-                                color: UiTheme.colors.primary20
+                                color: "#c7c7ce"
                                 wrapMode: Text.Wrap
                             }
                         }
@@ -256,7 +259,7 @@ Item {
 
     UiColumnLayout {
         anchors.fill: parent
-        spacing: 24
+        spacing: 16
         UiScrollView {
             id: iScrollView
             Layout.fillHeight: true
@@ -267,17 +270,17 @@ Item {
 
             UiColumnLayout {
                 id: iContentLayout
-                width: 520
+                width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
                 Layout.alignment: Qt.AlignTop
-                spacing: 16
+                spacing: 12
                 UiColumnLayout {
                     Layout.fillWidth: true
                     spacing: 12
                     Text {
                         id: iResolutionTxt
                         text: qsTranslate("QObject", "Display resolution")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
                     UiComboBox {
                         id: iResolutionCombobox
@@ -287,7 +290,7 @@ Item {
                             qsTranslate("QObject", "Portrait"),
                             qsTranslate("QObject", "Ultrawide"),
                             qsTranslate("QObject", "Custom")]
-                        Layout.preferredWidth: 200
+                        Layout.preferredWidth: 174
                         onActivated: {
                             if (pCompLoaded) {
                                 fSetResolutionOptionsVisibility(currentIndex)
@@ -500,8 +503,8 @@ Item {
                         spacing: 12
                         Text {
                             text: qsTranslate("QObject", "There are no custom resolution presets")
-                            font: UiTheme.fonts.bodySmall
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:10})
+                            color: "#c7c7ce"
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
                             horizontalAlignment: Text.AlignLeft
@@ -523,15 +526,15 @@ Item {
                         spacing: 12
                         visible: false
                         padding: 12
-                        color: UiTheme.colors.primary70
+                        color: "#151519"
                         Layout.fillWidth: true
                         border.color: iErrorMessage.visible ? UiTheme.colors.dangerNormal : UiTheme.colors.primary60
                         UiRowLayout {
                             Layout.fillWidth: true
                             Text {
                                 text: qsTranslate("QObject", "Add custom resolution")
-                                font: UiTheme.fonts.titleSmallest
-                                color: UiTheme.colors.primary10
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#eeeef2"
                                 Layout.fillWidth: true
                                 wrapMode: Text.Wrap
                                 horizontalAlignment: Text.AlignLeft
@@ -556,8 +559,8 @@ Item {
                             spacing: 12
                             Text {
                                 text: qsTranslate("QObject", "Width ") + "(px)"
-                                font: UiTheme.fonts.bodyLarge
-                                color: UiTheme.colors.primary20
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#c7c7ce"
                                 Layout.maximumWidth: 140
                                 horizontalAlignment: Text.AlignLeft
                                 elide: Text.ElideRight
@@ -578,8 +581,8 @@ Item {
 
                             Text {
                                 text: qsTranslate("QObject", "Height ") + "(px)"
-                                font: UiTheme.fonts.bodyLarge
-                                color: UiTheme.colors.primary20
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#c7c7ce"
                                 Layout.maximumWidth: 140
                                 horizontalAlignment: Text.AlignLeft
                                 elide: Text.ElideRight
@@ -626,7 +629,7 @@ Item {
                             id: iErrorMessage
                             visible: false
                             text: qsTranslate("QObject", "This custom resolution already exists")
-                            font: UiTheme.fonts.titleSmallest
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
                             color: UiTheme.colors.dangerNormal
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -642,8 +645,8 @@ Item {
                                          pRecommendedResolution[iResolutionCombobox.currentIndex] :
                                          "1920 x 1080")
                         }
-                        font: UiTheme.fonts.bodySmall
-                        color: UiTheme.colors.primary30
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
+                        color: "#bdbdc5"
                         wrapMode: Text.Wrap
                         visible: iResolutionCombobox.currentIndex != 3
                     }
@@ -651,7 +654,7 @@ Item {
                     Text {
                         Layout.fillWidth: true
                         text: qsTranslate("QObject", "NOTE: Keyboard controls at these resolutions are supported only for Wild Rift. Controls may not work as expected for other games.")
-                        font: UiTheme.fonts.bodySmall
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
                         color: UiTheme.colors.warning
                         wrapMode: Text.Wrap
                         visible: iResolutionCombobox.currentIndex === 2
@@ -659,7 +662,7 @@ Item {
                 }
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
 
@@ -668,8 +671,8 @@ Item {
                     spacing: 12
                     Text {
                         text: qsTranslate("QObject", "Pixel Density")
-                        font :UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font :Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
 
                     UiRowLayout {
@@ -721,8 +724,8 @@ Item {
                         Text {
                             Layout.fillWidth: true
                             text: qsTranslate("QObject", "DPI")
-                            font: UiTheme.fonts.bodyLarge
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             visible: iDpiCustom.checked
                         }
                     }
@@ -731,7 +734,7 @@ Item {
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
                         text: qsTranslate("QObject", "NOTE: Changing the pixel density may affect gameplay experience of some apps.")
-                        font: UiTheme.fonts.bodySmall
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
                         color: UiTheme.colors.warning
                     }
                 }
@@ -743,7 +746,7 @@ Item {
 
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
 
@@ -753,16 +756,16 @@ Item {
                     spacing: 12
                     Text {
                         text: qsTranslate("QObject", "Interface scaling")
-                        font :UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font :Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
 
                     Text {
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
                         text: qsTranslate("QObject", "Only applies to the size of text and icons in App Player and not within apps.")
-                        font: UiTheme.fonts.bodySmall
-                        color: UiTheme.colors.primary30
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
+                        color: "#bdbdc5"
                     }
 
                     UiComboBox {
@@ -771,7 +774,7 @@ Item {
                         model: pInterfaceScalingModel
                         textRole: "text"
                         valueRole: "value"
-                        Layout.preferredWidth: 200
+                        Layout.preferredWidth: 174
                         onActivated: {
                             if (pCompLoaded) {
                                 uiBackend.confSetString("bst.ui_scale_factor", currentValue)
@@ -784,7 +787,7 @@ Item {
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
                         text: qsTranslate("QObject", "NOTE: 100% scaling is advised for screens with a resolution of 1920 x 1080 or lower.")
-                        font: UiTheme.fonts.bodySmall
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
                         color: UiTheme.colors.warning
                     }
                 }
@@ -793,7 +796,7 @@ Item {
         UiRowLayout {
             spacing: 4
             Layout.fillWidth: true
-            Layout.preferredHeight: 36
+            Layout.preferredHeight: 29
 
             UiImage {
                 asset: "MenuInfo"
@@ -803,8 +806,8 @@ Item {
 
             Text {
                 text: qsTranslate("QObject", "Changes will apply on next launch")
-                font : UiTheme.fonts.bodySmall
-                color: UiTheme.colors.primary20
+                font : Qt.font({family:"Segoe UI",pixelSize:10})
+                color: "#c7c7ce"
                 horizontalAlignment: Text.AlignLeft
                 Layout.fillWidth: true
                 elide: Text.ElideRight

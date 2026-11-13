@@ -17,6 +17,9 @@ import UiToolTipControl 1.0
 import UiFolderDialog 1.0
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+id: voidNativeSettingsPage
+
     objectName: "audioSetting"
 
     property bool pCompLoaded: false
@@ -72,7 +75,7 @@ Item {
 
     UiColumnLayout {
         anchors.fill: parent
-        spacing: 24
+        spacing: 16
         UiScrollView {
             id: iScrollView
             Layout.fillHeight: true
@@ -83,24 +86,24 @@ Item {
 
             UiColumnLayout {
                 id: iContentLayout
-                width: 520
+                width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
                 Layout.alignment: Qt.AlignTop
-                spacing: 16
+                spacing: 12
                 UiColumnLayout {
                     spacing: 8
                     Layout.fillWidth: true
 
                     Text {
                         text: qsTranslate("QObject", "Choose your preferred devices")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                         Layout.bottomMargin: 8
                     }
 
                     Text {
                         text: qsTranslate("QObject", "Speakers")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary20
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#c7c7ce"
                     }
 
                     UiComboBox {
@@ -120,8 +123,8 @@ Item {
 
                     Text {
                         text: qsTranslate("QObject", "Microphone")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary20
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#c7c7ce"
                         Layout.topMargin: 8
                     }
 
@@ -144,8 +147,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Camera")
-                            font: UiTheme.fonts.bodyLarge
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             Layout.topMargin: 8
                         }
                         UiImageButton {
@@ -185,7 +188,7 @@ Item {
                         id: iErrorMessage
                         visible: pErrorVisible
                         text: qsTranslate("QObject", "This device is not supported")
-                        font: UiTheme.fonts.titleSmallest
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
                         color: UiTheme.colors.dangerNormal
                         Layout.fillWidth: true
                         wrapMode: Text.Wrap
@@ -194,8 +197,8 @@ Item {
                     }
                     Text {
                         text: qsTranslate("QObject", "Camera rotation angle")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary20
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#c7c7ce"
                         Layout.topMargin: 8
                     }
                     GridLayout {
@@ -235,7 +238,7 @@ Item {
             id: iBottomRow
             spacing: 4
             Layout.fillWidth: true
-            Layout.preferredHeight: 36
+            Layout.preferredHeight: 29
 
             UiButton{
                 Layout.alignment: Qt.AlignRight

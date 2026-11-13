@@ -5,6 +5,8 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+
     id: aboutPage
     objectName: "aboutSettings"
 
@@ -46,7 +48,7 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
             anchors.topMargin: 16
-            spacing: 16
+            spacing: 12
 
             Rectangle {
                 Layout.fillWidth: true

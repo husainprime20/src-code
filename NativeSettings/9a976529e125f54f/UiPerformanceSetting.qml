@@ -17,6 +17,9 @@ import UiAndroidImageTrait 1.0
 import UiToolTipControl 1.0
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+id: voidNativeSettingsPage
+
     property bool   pCompLoaded: false
     property bool   pEnableSave: false
     property string pParentWindow: ""
@@ -171,7 +174,7 @@ Item {
 
     UiColumnLayout {
         anchors.fill: parent
-        spacing: 24
+        spacing: 16
         UiScrollView {
             id: iScrollView
             Layout.fillHeight: true
@@ -182,15 +185,15 @@ Item {
 
             UiColumnLayout {
                 id: iContentLayout
-                width: 520
+                width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
                 Layout.alignment: Qt.AlignTop
-                spacing: 16
+                spacing: 12
                 UiColumnLayout {
                     spacing: 12
                     Text {
                         text: qsTranslate("QObject", "CPU allocation")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                         elide: Text.ElideRight
                         horizontalAlignment: Text.AlignLeft
                     }
@@ -202,7 +205,7 @@ Item {
                             model: pCpuModel
                             textRole: "text"
                             valueRole: "value"
-                            Layout.preferredWidth: 200
+                            Layout.preferredWidth: 174
                             onActivated: {
                                 if (pCompLoaded) {
                                     if(currentIndex<=2){
@@ -224,7 +227,7 @@ Item {
                             id: iCustomCpuCombobx
                             pSize: UiTheme.comboBoxes.sizes.medium
                             model: pCustomCpuModel
-                            Layout.preferredWidth: 200
+                            Layout.preferredWidth: 174
                             visible: false
                             onActivated: {
                                 if (pCompLoaded && iCpuCombobox.currentIndex === 3) {
@@ -248,31 +251,31 @@ Item {
                     Layout.fillWidth: true
                     text: qsTranslate("QObject", "%1 is currently limited to using 1 CPU core. To utilize more CPU cores, please enable hardware-assisted virtualization.").arg(uiBackend.productName) + " " + "<a href=\"javascript:void(0)\">" + qsTranslate("QObject", "View solution") + "</a>"
                     onLinkActivated: uiBackend.openRawModeHelp()
-                    font: UiTheme.fonts.bodySmall
+                    font: Qt.font({family:"Segoe UI",pixelSize:10})
                     color: UiTheme.colors.warning
-                    linkColor: UiTheme.colors.accentNormal
+                    linkColor: "#eeeef2"
                 }
                 Text {
                     id: iMaxCpuwarningTxt
                     visible: !iRawModewarningText.visible && (pCurrentCpu === pMaxCpu)
                     Layout.fillWidth: true
                     text: qsTranslate("QObject", "Assigning all CPU cores to %1 will cause overall system to lag/slowdown").arg(uiBackend.productName)
-                    font: UiTheme.fonts.bodySmall
+                    font: Qt.font({family:"Segoe UI",pixelSize:10})
                     color: UiTheme.colors.warning
                     wrapMode: Text.Wrap
                 }
 
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
                 UiColumnLayout {
                     spacing: 12
                     Text {
-                        text: qsTranslate("QObject", "RAM allocation")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        text: qsTranslate("QObject", "Memory allocation")
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                         elide: Text.ElideRight
                         horizontalAlignment: Text.AlignLeft
                     }
@@ -285,7 +288,7 @@ Item {
                             textRole: "text"
                             valueRole: "value"
                             pVisibilityRole: "visible"
-                            Layout.preferredWidth: 200
+                            Layout.preferredWidth: 174
                             onActivated: {
                                 if (pCompLoaded) {
                                     if (currentValue === "*") {
@@ -302,7 +305,7 @@ Item {
                         UiTextField {
                             id: iCustomRamTextField
                             pSize: UiTheme.textFields.sizes.medium
-                            Layout.preferredWidth: 200
+                            Layout.preferredWidth: 174
                             visible: (iRamCombobox.currentIndex === pRamModel.length - 1)
                             text: "4096"
                             validator: IntValidator {bottom: 600; top: pMaxRam}
@@ -326,7 +329,7 @@ Item {
                 }
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
                 UiColumnLayout{
@@ -339,8 +342,8 @@ Item {
                             spacing: 8
                             Text {
                                 text: qsTranslate("QObject", "Performance mode")
-                                font: UiTheme.fonts.bodyLarge
-                                color: UiTheme.colors.primary10
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#eeeef2"
                             }
                             UiImageButton {
                                 asset: "MenuHelp"
@@ -359,8 +362,8 @@ Item {
                             Text {
                                 Layout.fillWidth: true
                                 text: qsTranslate("QObject", "This setting is applied to all instances.")
-                                font : UiTheme.fonts.bodySmall
-                                color: UiTheme.colors.primary30
+                                font : Qt.font({family:"Segoe UI",pixelSize:10})
+                                color: "#bdbdc5"
                                 wrapMode: Text.Wrap
                             }
                         }
@@ -375,7 +378,7 @@ Item {
                              qsTranslate("QObject", "Low Memory")
                         ]
 
-                        Layout.preferredWidth: 200
+                        Layout.preferredWidth: 174
                         onActivated: {
                             if (pCompLoaded) {
                                 switch(currentIndex)
@@ -408,7 +411,7 @@ Item {
                 }
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                     visible: pParentWindow == "plr" ? true : false
                 }
@@ -438,14 +441,14 @@ Item {
                         Layout.fillWidth: true
                         Text {
                             text: qsTranslate("QObject", "Recommended FPS")
-                            font : UiTheme.fonts.bodySmall
-                            color: UiTheme.colors.primary30
+                            font : Qt.font({family:"Segoe UI",pixelSize:10})
+                            color: "#bdbdc5"
                         }
                         Text {
                             Layout.fillWidth: true
                             text: qsTranslate("QObject", "Play at 60 FPS for smooth gameplay. If you’re running multiple instances, we recommend selecting 20 FPS. Some apps may need an App Player restart for changes to take effect.")
-                            font : UiTheme.fonts.bodySmall
-                            color: UiTheme.colors.primary30
+                            font : Qt.font({family:"Segoe UI",pixelSize:10})
+                            color: "#bdbdc5"
                             wrapMode: Text.Wrap
                         }
                     }
@@ -458,8 +461,8 @@ Item {
                             spacing: 8
                             Text {
                                 text: qsTranslate("QObject", "Enable high frame rate")
-                                font : UiTheme.fonts.bodyMedium
-                                color: UiTheme.colors.primary20
+                                font : Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#c7c7ce"
                                 horizontalAlignment: Text.AlignLeft
                                 Layout.fillWidth: true
                                 elide: Text.ElideRight
@@ -482,8 +485,8 @@ Item {
                             spacing: 8
                             Text {
                                 text: qsTranslate("QObject", "Enable VSync (To prevent screen tearing)")
-                                font : UiTheme.fonts.bodyMedium
-                                color: UiTheme.colors.primary20
+                                font : Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#c7c7ce"
                                 horizontalAlignment: Text.AlignLeft
                                 Layout.fillWidth: true
                                 elide: Text.ElideRight
@@ -507,8 +510,8 @@ Item {
                             spacing: 8
                             Text {
                                 text: qsTranslate("QObject", "Display FPS during gameplay")
-                                font : UiTheme.fonts.bodyMedium
-                                color: UiTheme.colors.primary20
+                                font : Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#c7c7ce"
                                 horizontalAlignment: Text.AlignLeft
                                 Layout.fillWidth: true
                                 elide: Text.ElideRight
@@ -529,7 +532,7 @@ Item {
         UiRowLayout {
             spacing: 4
             Layout.fillWidth: true
-            Layout.preferredHeight: 36
+            Layout.preferredHeight: 29
             UiImage {
                 asset: "MenuInfo"
                 pImageWidth: 12
@@ -537,8 +540,8 @@ Item {
             }
             Text {
                 text: qsTranslate("QObject", "Some changes will apply on next launch")
-                font : UiTheme.fonts.bodySmall
-                color: UiTheme.colors.primary20
+                font : Qt.font({family:"Segoe UI",pixelSize:10})
+                color: "#c7c7ce"
                 horizontalAlignment: Text.AlignLeft
                 Layout.fillWidth: true
                 elide: Text.ElideRight

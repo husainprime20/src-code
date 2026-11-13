@@ -21,6 +21,9 @@ import UiOverlayControl 1.0
 import UiQuickWindow 1.0
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+id: voidNativeSettingsPage
+
     objectName: "preferences"
     property bool pCompLoaded: false
     property bool pEnableSave: false
@@ -228,7 +231,7 @@ Item {
                     height: iMainContentLayout.implicitHeight
                     border.color: UiTheme.colors.primary60
                     border.width: 1
-                    color: UiTheme.colors.primary70
+                    color: "#151519"
 
                     UiColumnLayout {
                         id: iMainContentLayout
@@ -280,8 +283,8 @@ Item {
                                 Layout.topMargin: 8
                                 horizontalAlignment: Text.AlignHCenter
                                 text: adsPreferencesPopup.popupData.description
-                                font: UiTheme.fonts.bodyLarge
-                                color: UiTheme.colors.primary20
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#c7c7ce"
                                 wrapMode: Text.Wrap
                             }
 
@@ -325,7 +328,7 @@ Item {
                                                 Text {
                                                     text: adsPreferencesPopup.popupData.prime_section.name
                                                     color: UiTheme.colors.secondaryHover
-                                                    font: UiTheme.fonts.titleSmall
+                                                    font: Qt.font({family:"Segoe UI",pixelSize:16})
                                                 }
                                             }
 
@@ -334,7 +337,7 @@ Item {
                                                 Layout.topMargin: 4
                                                 text: adsPreferencesPopup.popupData.prime_section.benefits
                                                 color: UiTheme.colors.overLayBright
-                                                font: UiTheme.fonts.bodyLarge
+                                                font: Qt.font({family:"Segoe UI",pixelSize:12})
                                                 wrapMode: Text.Wrap
                                             }
 
@@ -389,7 +392,7 @@ Item {
                             Text {
                                 id: iFooterTextBtn
                                 text: adsPreferencesPopup.popupData.footer_links[0].text
-                                font: UiTheme.fonts.bodySmall
+                                font: Qt.font({family:"Segoe UI",pixelSize:10})
                                 color: UiTheme.colors.overLayBright
                                 Layout.fillWidth: true
                                 horizontalAlignment: Text.AlignHCenter
@@ -418,7 +421,7 @@ Item {
 
     UiColumnLayout {
         anchors.fill: parent
-        spacing: 24
+        spacing: 16
         UiScrollView {
             id: iScrollView
             Layout.fillHeight: true
@@ -429,15 +432,15 @@ Item {
 
             UiColumnLayout {
                 id: iContentLayout
-                width: 520
+                width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
                 Layout.alignment: Qt.AlignTop
-                spacing: 16
+                spacing: 12
                 UiColumnLayout {
                     spacing: 8
                     Text {
                         text: qsTranslate("QObject", "Language")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
 
                     UiComboBox {
@@ -456,7 +459,7 @@ Item {
 
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
 
@@ -465,8 +468,8 @@ Item {
                     spacing: 12
                     Text {
                         text: qsTranslate("QObject", "Platform")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                         horizontalAlignment: Text.AlignLeft
                     }
                     UiRowLayout {
@@ -475,8 +478,8 @@ Item {
                         visible: uiBackend.oem !== "nxt_cn" && uiBackend.oem !== "wmx"
                         Text {
                             text: qsTranslate("QObject", "Allow %1 to connect with Discord").arg(uiBackend.productName)
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -495,8 +498,8 @@ Item {
                         visible: uiBackend.oem !== "wmx"
                         Text {
                             text: qsTranslate("QObject", "Create desktop shortcuts for apps after installation")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -515,8 +518,8 @@ Item {
                         visible: uiBackend.oem !== "wmx"
                         Text {
                             text: qsTranslate("QObject", "Ask for sign in with Google Play on launching a game")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -536,8 +539,8 @@ Item {
                             spacing: 8
                             Text {
                                 text: qsTranslate("QObject", "Enable android sound while tapping")
-                                font: UiTheme.fonts.bodyMedium
-                                color: UiTheme.colors.primary20
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#c7c7ce"
                                 horizontalAlignment: Text.AlignLeft
                             }
                             UiImageButton {
@@ -567,8 +570,8 @@ Item {
                                  uiBackend.confGetBool("bst.feature.show_programmatic_ads_preference")
                         Text {
                             text: qsTranslate("QObject", "Allow %1 to show Ads during gameplay").arg(uiBackend.productName)
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -596,8 +599,8 @@ Item {
                         visible: uiBackend.confGetBool("bst.feature.show_boot_banner_preference")
                         Text {
                             text: qsTranslate("QObject", "Show featured banner on start")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -616,8 +619,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Open Store on start").arg(uiBackend.productName)
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -636,8 +639,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Upload video recordings to the cloud automatically")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -657,8 +660,8 @@ Item {
                         visible: uiBackend.confGetBool("bst.feature.show_ai_highlights")
                         Text {
                             text: qsTranslate("QObject", "Enable AI Highlights")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -675,7 +678,7 @@ Item {
 
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
 
@@ -686,8 +689,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "ESC key behavior")
-                            font: UiTheme.fonts.bodyLarge
-                            color: UiTheme.colors.primary10
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#eeeef2"
                             horizontalAlignment: Text.AlignLeft
                         }
                         UiImageButton {
@@ -704,8 +707,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Exit fullscreen")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -724,8 +727,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Unlock mouse cursor")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -742,7 +745,7 @@ Item {
 
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
 
@@ -753,8 +756,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "In-app Notifications")
-                            font: UiTheme.fonts.bodyLarge
-                            color: UiTheme.colors.primary10
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#eeeef2"
                             horizontalAlignment: Text.AlignLeft
                         }
                         UiImageButton {
@@ -771,8 +774,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Desktop notifications")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -791,8 +794,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Auto hide desktop notifications")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -810,7 +813,7 @@ Item {
 
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                     visible: uiBackend.confGetBool("bst.feature.enable_mobile_notification")
                 }
@@ -829,8 +832,8 @@ Item {
                             spacing: 8
                             Text {
                                 text: qsTranslate("QObject", "Mobile Notifications")
-                                font: UiTheme.fonts.bodyLarge
-                                color: UiTheme.colors.primary10
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#eeeef2"
                                 horizontalAlignment: Text.AlignLeft
                             }
                             UiImageButton {
@@ -867,8 +870,8 @@ Item {
                         }
                         Text {
                             text: qsTranslate("QObject", "Get BlueStacks App Player games alerts directly on your mobile")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -885,8 +888,8 @@ Item {
                             spacing: 8
                             Text {
                                 text: qsTranslate("QObject", "Linked Devices")
-                                font: UiTheme.fonts.bodyLarge
-                                color: UiTheme.colors.primary10
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#eeeef2"
                                 horizontalAlignment: Text.AlignLeft
                             }
                             UiImageButton {
@@ -934,14 +937,14 @@ Item {
                                 Layout.maximumWidth: 380
                                 Layout.fillHeight: true
                                 text: qsTranslate("QObject", "Download & Install the BlueStacks Mobile App to enable game notifications on your phone.")
-                                font: UiTheme.fonts.bodyMedium
-                                color: UiTheme.colors.primary20
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#c7c7ce"
                                 horizontalAlignment: Text.AlignLeft
                                 wrapMode: Text.Wrap
                             }
                             Text {
                                 text: qsTranslate("QObject", "No Device Linked")
-                                font: UiTheme.fonts.bodyMedium
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
                                 color: UiTheme.colors.warning
                                 horizontalAlignment: Text.AlignRight
                                 Layout.alignment: Qt.AlignTop | Qt.AlignRight
@@ -953,9 +956,9 @@ Item {
                         }
                         UiTextUrl {
                             text: "<a href=\"javascript:void(0)\">"+qsTranslate("QObject", "How to link")+"</a>"
-                            font:  UiTheme.fonts.bodySmall
-                            color: UiTheme.colors.primary30
-                            linkColor: UiTheme.colors.accentNormal
+                            font:  Qt.font({family:"Segoe UI",pixelSize:10})
+                            color: "#bdbdc5"
+                            linkColor: "#eeeef2"
                             wrapMode: Text.Wrap
                             Layout.alignment: Qt.AlignLeft
                             visible: pMobileDeviceCount <= 0
@@ -999,8 +1002,8 @@ Item {
                                     Text {
                                         text: model.name
                                         Layout.fillWidth: true
-                                        font: UiTheme.fonts.bodyLarge
-                                        color: UiTheme.colors.primary20
+                                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                        color: "#c7c7ce"
                                         elide: Text.ElideRight
                                         horizontalAlignment: Text.AlignVCenter
                                     }
@@ -1017,7 +1020,7 @@ Item {
 
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
 
@@ -1031,8 +1034,8 @@ Item {
                             spacing: 8
                             Text {
                                 text: qsTranslate("QObject", "Windows Push Notifications")
-                                font: UiTheme.fonts.bodyLarge
-                                color: UiTheme.colors.primary10
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#eeeef2"
                                 horizontalAlignment: Text.AlignLeft
                             }
                             UiImageButton {
@@ -1048,7 +1051,7 @@ Item {
                             id: iPushNotificationButton
                             spacing: 2
                             Layout.alignment: Qt.AlignRight
-                            color: UiTheme.colors.accentNormal
+                            color: "#eeeef2"
                             leftPadding: 8
                             rightPadding: 8
                             topPadding: 5
@@ -1058,8 +1061,8 @@ Item {
                                 Layout.fillWidth: true
                                 horizontalAlignment: Text.AlignHCenter
                                 text: qsTranslate("QObject", "Manage")
-                                font: UiTheme.fonts.titleSmallest
-                                color: UiTheme.colors.primary10
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#eeeef2"
                                 elide: Text.ElideRight
                             }
                             UiImage {
@@ -1087,7 +1090,7 @@ Item {
 
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                     visible: plrBackend.pPushNotificationSettingVisible
                 }
@@ -1097,8 +1100,8 @@ Item {
                     spacing: 12
                     Text {
                         text: qsTranslate("QObject", "Media folder")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                         horizontalAlignment: Text.AlignLeft
                     }
 
@@ -1107,8 +1110,8 @@ Item {
                         spacing: 8
                         Text {
                             id: iMediaFolderPath
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -1133,8 +1136,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Allow %1 to access Windows Pictures and Documents folders").arg(uiBackend.productName)
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -1154,7 +1157,7 @@ Item {
         UiRowLayout {
             spacing: 4
             Layout.fillWidth: true
-            Layout.preferredHeight: 36
+            Layout.preferredHeight: 29
 
             UiButton{
                 Layout.alignment: Qt.AlignRight

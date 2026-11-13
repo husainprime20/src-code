@@ -16,6 +16,9 @@ import DialogButtonModelList 1.0
 import UiDialogWindow 1.0
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+id: voidNativeSettingsPage
+
     objectName: "userData"
 
     property var optimizationSpaceRequiredinMB: plrBackend.computeOptimizationSpaceRequired()
@@ -166,7 +169,7 @@ Item {
 
     UiColumnLayout {
         id: iContentLayout
-        width: 520
+        width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
         spacing: 40
         Layout.alignment: Qt.AlignTop
         UiColumnLayout {
@@ -174,7 +177,7 @@ Item {
             spacing: 32
             UiRowLayout {
                 Layout.fillWidth: true
-                spacing: 16
+                spacing: 12
                 UiImage {
                     asset: "DiskCleanup"
                     pImageWidth: 48
@@ -186,14 +189,14 @@ Item {
                     Layout.fillWidth: true
                     Text {
                         text: qsTranslate("QObject", "Disk cleanup")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
                     Text {
                         Layout.fillWidth: true
                         text: qsTranslate("QObject", "Free up space unused by %1 so that other Windows apps on your PC may use it.").arg(uiBackend.productName)
-                        font: UiTheme.fonts.bodyMedium
-                        color: UiTheme.colors.primary30
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#bdbdc5"
                         wrapMode: Text.Wrap
                     }
                 }
@@ -215,7 +218,7 @@ Item {
             visible: plrBackend.showDiskOptimizationSetting()
             UiRowLayout {
                 Layout.fillWidth: true
-                spacing: 16
+                spacing: 12
                 UiImage {
                     asset: "Disk_optimize"
                     pImageWidth: 48
@@ -229,8 +232,8 @@ Item {
                         spacing: 4
                         Text {
                             text: qsTranslate("QObject", "Disk format check")
-                            font: UiTheme.fonts.bodyLarge
-                            color: UiTheme.colors.primary10
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#eeeef2"
                         }
                         UiImageButton {
                             asset: "MenuHelp"
@@ -253,8 +256,8 @@ Item {
                     Text {
                         Layout.fillWidth: true
                         text: qsTranslate("QObject", "One-time disk format check to ensure consistency with current %1 version.").arg(uiBackend.productName)
-                        font: UiTheme.fonts.bodyMedium
-                        color: UiTheme.colors.primary30
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#bdbdc5"
                         wrapMode: Text.Wrap
                     }
                 }
@@ -279,7 +282,7 @@ Item {
             spacing: 32
             UiRowLayout {
                 Layout.fillWidth: true
-                spacing: 16
+                spacing: 12
                 UiImage {
                     asset: "Backup_restore"
                     pImageWidth: 48
@@ -293,8 +296,8 @@ Item {
                         spacing: 4
                         Text {
                             text: qsTranslate("QObject", "Backup and restore")
-                            font: UiTheme.fonts.bodyLarge
-                            color: UiTheme.colors.primary10
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#eeeef2"
                         }
                         UiImageButton {
                             asset: "MenuHelp"
@@ -308,15 +311,15 @@ Item {
                     Text {
                         Layout.fillWidth: true
                         text: qsTranslate("QObject", "Backup your installed apps, game controls, user data, macros, settings, and all other instances. Restore them anytime.")
-                        font: UiTheme.fonts.bodyMedium
-                        color: UiTheme.colors.primary30
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#bdbdc5"
                         wrapMode: Text.Wrap
                     }
                 }
             }
             UiRowLayout {
                 Layout.alignment: Qt.AlignRight
-                spacing: 16
+                spacing: 12
                 UiButton {
                     pSize: UiTheme.buttons.sizes.medium
                     pColor: UiTheme.buttons.colors.secondary

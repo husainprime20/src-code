@@ -15,6 +15,9 @@ import UiDialogWindow 1.0
 import UiToolTipControl 1.0
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+id: voidNativeSettingsPage
+
     objectName: "gameSetting"
 
     property bool pCompLoaded: false
@@ -62,7 +65,7 @@ Item {
 
     UiColumnLayout {
         anchors.fill: parent
-        spacing: 24
+        spacing: 16
         UiScrollView {
             id: iScrollView
             Layout.fillHeight: true
@@ -73,22 +76,22 @@ Item {
 
             UiColumnLayout {
                 id: iContentLayout
-                width: 520
+                width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
                 Layout.alignment: Qt.AlignTop
-                spacing: 16
+                spacing: 12
 
                 UiColumnLayout {
                     Layout.fillWidth: true
                     spacing: 4
                     UiText {
                         text: qsTranslate("QObject", "Launch in fullscreen")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
                     UiText {
                         text: qsTranslate("QObject", "Choose apps that you want to launch in fullscreen by default.")
-                        font: UiTheme.fonts.bodySmall
-                        color: UiTheme.colors.primary30
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
+                        color: "#bdbdc5"
                         horizontalAlignment: Text.AlignLeft
                         Layout.fillWidth: true
                     }
@@ -113,8 +116,8 @@ Item {
                         Layout.topMargin: 12
                         Layout.bottomMargin: 12
                         text: qsTranslate("QObject", "No apps installed")
-                        font: UiTheme.fonts.bodySmall
-                        color: UiTheme.colors.primary20
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
+                        color: "#c7c7ce"
                         Layout.fillWidth: true
                         elide:Text.ElideRight
                     }
@@ -128,8 +131,8 @@ Item {
                     spacing: 8
                     Text {
                         text: qsTranslate("QObject", "All apps")
-                        font: UiTheme.fonts.bodyMedium
-                        color: UiTheme.colors.primary20
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#c7c7ce"
                         horizontalAlignment: Text.AlignLeft
                         Layout.fillWidth: true
                         elide:Text.ElideRight
@@ -170,8 +173,8 @@ Item {
 
                             UiText {
                                 text: model.appLabel
-                                font: UiTheme.fonts.bodyMedium
-                                color: UiTheme.colors.primary20
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#c7c7ce"
                                 horizontalAlignment: Text.AlignLeft
                                 Layout.fillWidth: true
                                 elide: Text.ElideRight
@@ -214,7 +217,7 @@ Item {
         }
         UiRowLayout {
             Layout.fillWidth: true
-            Layout.preferredHeight: 36
+            Layout.preferredHeight: 29
             UiButton{
                 pSize: UiTheme.buttons.sizes.medium
                 pColor: UiTheme.buttons.colors.accent

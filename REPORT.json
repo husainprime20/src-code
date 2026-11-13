@@ -3,12 +3,12 @@
   "mode": "read-only-native-ui-diagnostic",
   "installation_modified": false,
   "binary_included": false,
-  "player_bytes": 24694784,
-  "player_sha256": "e37b1f1467f6e9fdae123c7ceb4370cbaf2b4916f0ebdc47aa5bdd46de14a045",
+  "player_bytes": 24742912,
+  "player_sha256": "4ce44fd28d096534afbdc8399463f7d11e8eebece5d5d872a8aa38e514468895",
   "resources": {
     "PlrSidebar.qml": {
-      "bytes": 75869,
-      "sha256": "5c2f21fa9e82e6b519b5c7cf7029c335d364e4a142b9a592a2236db891c335df"
+      "bytes": 76377,
+      "sha256": "806f63a0cc1d23d5bfb16ee456257774e8b6aee496abacb95a5d7e6000984775"
     },
     "UiSettingsWindow.qml": {
       "bytes": 11133,
@@ -95,6 +95,10 @@
     },
     {
       "container": "HD-Player.exe",
+      "resource": "PlrTopbar.qml"
+    },
+    {
+      "container": "HD-Player.exe",
       "resource": "UiImageComboBox.qml"
     },
     {
@@ -166,18 +170,18 @@
     },
     {
       "file": "NativeSettings/e585a0bb160b1d7d/PlrPreferencesSetting.qml",
-      "sha256": "73dd453017837d236b4cb2d66d7bd3a9a2a5990fbea238aa5a3aeba6a5b3cee0",
-      "bytes": 65215
+      "sha256": "f873aeeeab843a14fa2ce84ab200aa651df47968cb73d01b37f1299016ba727c",
+      "bytes": 65361
     },
     {
       "file": "NativeSettings/15f75648cf01d239/PlrGameSetting.qml",
-      "sha256": "0e11209d79b8319d51602a74c475d13a1aa5b75a61d26e9381885c2225321ec4",
-      "bytes": 11793
+      "sha256": "8832a02801d5deed3711ed74c898e195a7bf3cb312888c97aba58d02940d7065",
+      "bytes": 11957
     },
     {
       "file": "NativeSettings/a93d4f1d99652a4f/PlrAboutSetting.qml",
-      "sha256": "2add2bc3a127695e46d0d6012b0007e41e3b85f7106b5b9358b0221231b2997e",
-      "bytes": 5582
+      "sha256": "5dd45057680180abb46f68476fa9b4bec0c98c8b61b6bb61763e1b494ae07d4b",
+      "bytes": 5653
     },
     {
       "file": "NativeSettings/91bb0b81faca92c5/UiText.qml",
@@ -191,13 +195,13 @@
     },
     {
       "file": "NativeSettings/554e2e7ebf22dc3b/PlrGamepadSetting.qml",
-      "sha256": "447d293d55c84320bd6dff9b5d09dbd8134d5bdf464e5881298800d734301c7f",
-      "bytes": 10400
+      "sha256": "20debcae5da9f3713cdf4ace4c7918a4cde4bb873a776df2b0e66191a3e132c5",
+      "bytes": 10536
     },
     {
       "file": "NativeSettings/90e173404fc35908/PlrAudioSetting.qml",
-      "sha256": "89dcefde12fdbaf90c54867e43b518076b7560f2b0b744efeec896ca6cd30daa",
-      "bytes": 12838
+      "sha256": "109333330accbc5a3bbbdc49ed6a18f2f0a15b996e720fca72c010615855c5bc",
+      "bytes": 13018
     },
     {
       "file": "NativeSettings/7e8057732d10dd04/PlrWebEngineView.qml",
@@ -206,8 +210,8 @@
     },
     {
       "file": "NativeSettings/76f75a15619b896c/UiDisplaySetting.qml",
-      "sha256": "21bf20035fddc19f30b280aa0271f3db21c143232462d0082975144e34105e89",
-      "bytes": 49154
+      "sha256": "c34360c59fb0925f8d86dd1dfead3765e99ed3df430dcef020e18ac2a688f6cd",
+      "bytes": 49368
     },
     {
       "file": "NativeSettings/659a4cb3df313f17/UiTextUrl.qml",
@@ -216,8 +220,8 @@
     },
     {
       "file": "NativeSettings/df54dd1589a43a9e/PlrUserDataSetting.qml",
-      "sha256": "96836d1cdeb78e37e2e2276d7f8826aa7c2e81499700c24cbfc54513f52be9ee",
-      "bytes": 14402
+      "sha256": "7f85a7a0101df80d436764c0d2fd7930f2794b37790811bf128afb062c0a47c4",
+      "bytes": 14568
     },
     {
       "file": "NativeSettings/4f2df976e3d41110/UiToggleButton.qml",
@@ -226,8 +230,8 @@
     },
     {
       "file": "NativeSettings/eb5895238dabb021/PlrAdvancedSetting.qml",
-      "sha256": "7aabf6b1e17ea16b49fbc34a399be8933f5a01b64fb40aa80d7798eb86dca06e",
-      "bytes": 13636
+      "sha256": "f643d52d7baf286640306fc2264aec9c56427355726c210de32748e29b188cea",
+      "bytes": 13813
     },
     {
       "file": "NativeSettings/ed17ccbb3182308f/UiSettingsButton.qml",
@@ -246,13 +250,18 @@
     },
     {
       "file": "NativeSettings/a3d11ba253cf5cda/PlrShortcutsSetting.qml",
-      "sha256": "1162164576f39727d16b5491add7c415dc28b9aafa6197e8e7353ed46e6aca38",
-      "bytes": 22078
+      "sha256": "73c7c9a20978adc002b76fa3673a1264501948d868e5bbfeeae1dd6f68d1f7ee",
+      "bytes": 22225
     },
     {
       "file": "NativeSettings/9a976529e125f54f/UiPerformanceSetting.qml",
-      "sha256": "3b4815d7904ab325cba14b789b4624f61f2c10054a04d2bb917ab1b1fd03f01d",
-      "bytes": 32770
+      "sha256": "edf2a70776abfc73198f69ee37fd5f472ae2f1f9c156c18a587ecaec7a21bdc3",
+      "bytes": 32924
+    },
+    {
+      "file": "NativeSettings/8c8a2be638360efa/PlrTopbar.qml",
+      "sha256": "37f3671dd4f26d39db8b4b9d0ad42e0ba3015ef6cefb8e4d9b2f8b2dc9732c48",
+      "bytes": 82218
     },
     {
       "file": "NativeSettings/6b25e598bd23b1b0/UiImageComboBox.qml",
@@ -266,13 +275,13 @@
     },
     {
       "file": "NativeSettings/f553a77a16e1c660/UiGraphicsSetting.qml",
-      "sha256": "2f45676b10b62a135d34d8fe43ef62db493a70b7240ffb5b0f1672a2d0ddaf76",
-      "bytes": 23472
+      "sha256": "83900bf4085b1bcd58e5404d03c4993a883b258d14b91041bcc72169c1533e68",
+      "bytes": 23607
     },
     {
       "file": "NativeSettings/173e2ec2c895c247/PlrDeviceSetting.qml",
-      "sha256": "0837eb9c18fc08d257b7c4e7f53275330c8352f65d21786f50c2f666115150bd",
-      "bytes": 31474
+      "sha256": "8a735f63075a3b8825223705de09149bd9ef24a74e1396b060b5017add68d01a",
+      "bytes": 31667
     },
     {
       "file": "NativeSettings/7cc1eef1676364ef/KmmEditorControlSettings.qml",
@@ -347,12 +356,12 @@
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "5c2f21fa9e82e6b519b5c7cf7029c335d364e4a142b9a592a2236db891c335df",
-            "core_marker": false,
+            "sha256": "806f63a0cc1d23d5bfb16ee456257774e8b6aee496abacb95a5d7e6000984775",
+            "core_marker": true,
             "page_marker": false
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "UiSettingsWindow.qml",
@@ -370,184 +379,184 @@
       },
       {
         "name": "UiPerformanceSetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "edf2a70776abfc73198f69ee37fd5f472ae2f1f9c156c18a587ecaec7a21bdc3",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "3b4815d7904ab325cba14b789b4624f61f2c10054a04d2bb917ab1b1fd03f01d",
+            "sha256": "edf2a70776abfc73198f69ee37fd5f472ae2f1f9c156c18a587ecaec7a21bdc3",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "UiDisplaySetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "c34360c59fb0925f8d86dd1dfead3765e99ed3df430dcef020e18ac2a688f6cd",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "21bf20035fddc19f30b280aa0271f3db21c143232462d0082975144e34105e89",
+            "sha256": "c34360c59fb0925f8d86dd1dfead3765e99ed3df430dcef020e18ac2a688f6cd",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "UiGraphicsSetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "83900bf4085b1bcd58e5404d03c4993a883b258d14b91041bcc72169c1533e68",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "2f45676b10b62a135d34d8fe43ef62db493a70b7240ffb5b0f1672a2d0ddaf76",
+            "sha256": "83900bf4085b1bcd58e5404d03c4993a883b258d14b91041bcc72169c1533e68",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "PlrAboutSetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "5dd45057680180abb46f68476fa9b4bec0c98c8b61b6bb61763e1b494ae07d4b",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "2add2bc3a127695e46d0d6012b0007e41e3b85f7106b5b9358b0221231b2997e",
+            "sha256": "5dd45057680180abb46f68476fa9b4bec0c98c8b61b6bb61763e1b494ae07d4b",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "PlrAdvancedSetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "f643d52d7baf286640306fc2264aec9c56427355726c210de32748e29b188cea",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "7aabf6b1e17ea16b49fbc34a399be8933f5a01b64fb40aa80d7798eb86dca06e",
+            "sha256": "f643d52d7baf286640306fc2264aec9c56427355726c210de32748e29b188cea",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "PlrAudioSetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "109333330accbc5a3bbbdc49ed6a18f2f0a15b996e720fca72c010615855c5bc",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "89dcefde12fdbaf90c54867e43b518076b7560f2b0b744efeec896ca6cd30daa",
+            "sha256": "109333330accbc5a3bbbdc49ed6a18f2f0a15b996e720fca72c010615855c5bc",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "PlrDeviceSetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "8a735f63075a3b8825223705de09149bd9ef24a74e1396b060b5017add68d01a",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "0837eb9c18fc08d257b7c4e7f53275330c8352f65d21786f50c2f666115150bd",
+            "sha256": "8a735f63075a3b8825223705de09149bd9ef24a74e1396b060b5017add68d01a",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "PlrGameSetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "8832a02801d5deed3711ed74c898e195a7bf3cb312888c97aba58d02940d7065",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "0e11209d79b8319d51602a74c475d13a1aa5b75a61d26e9381885c2225321ec4",
+            "sha256": "8832a02801d5deed3711ed74c898e195a7bf3cb312888c97aba58d02940d7065",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "PlrGamepadSetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "20debcae5da9f3713cdf4ace4c7918a4cde4bb873a776df2b0e66191a3e132c5",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "447d293d55c84320bd6dff9b5d09dbd8134d5bdf464e5881298800d734301c7f",
+            "sha256": "20debcae5da9f3713cdf4ace4c7918a4cde4bb873a776df2b0e66191a3e132c5",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "PlrPreferencesSetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "f873aeeeab843a14fa2ce84ab200aa651df47968cb73d01b37f1299016ba727c",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "73dd453017837d236b4cb2d66d7bd3a9a2a5990fbea238aa5a3aeba6a5b3cee0",
+            "sha256": "f873aeeeab843a14fa2ce84ab200aa651df47968cb73d01b37f1299016ba727c",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "PlrShortcutsSetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "73c7c9a20978adc002b76fa3673a1264501948d868e5bbfeeae1dd6f68d1f7ee",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "1162164576f39727d16b5491add7c415dc28b9aafa6197e8e7353ed46e6aca38",
+            "sha256": "73c7c9a20978adc002b76fa3673a1264501948d868e5bbfeeae1dd6f68d1f7ee",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       },
       {
         "name": "PlrUserDataSetting.qml",
-        "tracked": false,
-        "expected_sha256": null,
+        "tracked": true,
+        "expected_sha256": "7f85a7a0101df80d436764c0d2fd7930f2794b37790811bf128afb062c0a47c4",
         "observed": [
           {
             "container": "HD-Player.exe",
-            "sha256": "96836d1cdeb78e37e2e2276d7f8826aa7c2e81499700c24cbfc54513f52be9ee",
+            "sha256": "7f85a7a0101df80d436764c0d2fd7930f2794b37790811bf128afb062c0a47c4",
             "core_marker": false,
-            "page_marker": false
+            "page_marker": true
           }
         ],
-        "digest_matches": false
+        "digest_matches": true
       }
     ],
     "assets": [
       {
         "name": "Assets/VOIDReferenceUI/Icons.js",
-        "expected_sha256": "b2ab94c0a926a72ea312338ad59a5369c8e0491f43e55394cb7415958d9a40c9",
-        "actual_sha256": "b2ab94c0a926a72ea312338ad59a5369c8e0491f43e55394cb7415958d9a40c9",
+        "expected_sha256": "190654b015e7aee957160a10da38a40353a7afd06061fcfd9ed0209ee79cae4e",
+        "actual_sha256": "190654b015e7aee957160a10da38a40353a7afd06061fcfd9ed0209ee79cae4e",
         "digest_matches": true
       },
       {
         "name": "Assets/VOIDReferenceUI/NativeControlStyle.qml",
-        "expected_sha256": "bdd445f042ee0274f563ec6f4b4fcac8c1da98e78d469fad68a693f5eed6ba70",
-        "actual_sha256": "bdd445f042ee0274f563ec6f4b4fcac8c1da98e78d469fad68a693f5eed6ba70",
+        "expected_sha256": "822c51cc7666fc3acaca863531d42353f75485ceb0a15fc4d2f990969ded7186",
+        "actual_sha256": "822c51cc7666fc3acaca863531d42353f75485ceb0a15fc4d2f990969ded7186",
         "digest_matches": true
       },
       {
@@ -558,34 +567,53 @@
       },
       {
         "name": "Assets/VOIDReferenceUI/OptimizerPage.qml",
-        "expected_sha256": "112068c68c7fd9213d372f04d37834ec834f71d502c75a3c279de3c45d3c41ba",
-        "actual_sha256": "112068c68c7fd9213d372f04d37834ec834f71d502c75a3c279de3c45d3c41ba",
+        "expected_sha256": "cf3becae6d8a51b5b6bb1a2c31439e15ec5d472b119c8ea2633c65ddbad76377",
+        "actual_sha256": "cf3becae6d8a51b5b6bb1a2c31439e15ec5d472b119c8ea2633c65ddbad76377",
         "digest_matches": true
       },
       {
         "name": "Assets/VOIDReferenceUI/SettingsShell.qml",
-        "expected_sha256": "307c691ac62eaa8a173df88963783b813f536aef065f04021c44389d45c0f0de",
-        "actual_sha256": "307c691ac62eaa8a173df88963783b813f536aef065f04021c44389d45c0f0de",
+        "expected_sha256": "7d39a81e135f1bc5955b6141c21b103a105b218c1179b5bafc27aeb421b29884",
+        "actual_sha256": "7d39a81e135f1bc5955b6141c21b103a105b218c1179b5bafc27aeb421b29884",
         "digest_matches": true
       },
       {
         "name": "Assets/VOIDReferenceUI/SidebarSkin.qml",
-        "expected_sha256": "449e0e2f56c71c62ab988f4d29e03bdc2e10027ba7b5580acee562109aca3418",
-        "actual_sha256": "449e0e2f56c71c62ab988f4d29e03bdc2e10027ba7b5580acee562109aca3418",
+        "expected_sha256": "b6da47e024c139ee41da6e684c6d15e7e82cdb7b7c9cb7560152a5c0131a6665",
+        "actual_sha256": "b6da47e024c139ee41da6e684c6d15e7e82cdb7b7c9cb7560152a5c0131a6665",
         "digest_matches": true
       },
       {
         "name": "Assets/VOIDReferenceUI/SidebarVisual.qml",
-        "expected_sha256": "bdd5388a1cc7f2df313845bdacd9a3fa0d2624d7bdab60ed37c7b2d392b1aff6",
-        "actual_sha256": "bdd5388a1cc7f2df313845bdacd9a3fa0d2624d7bdab60ed37c7b2d392b1aff6",
+        "expected_sha256": "a394e3c83911a57813159011571052b7b86142057d197eba061f0d0060f4b655",
+        "actual_sha256": "a394e3c83911a57813159011571052b7b86142057d197eba061f0d0060f4b655",
         "digest_matches": true
+      },
+      {
+        "name": "Assets/VOIDReferenceUI/Theme.qml",
+        "expected_sha256": null,
+        "actual_sha256": null,
+        "digest_matches": false
+      },
+      {
+        "name": "Assets/VOIDReferenceUI/TopbarSkin.qml",
+        "expected_sha256": null,
+        "actual_sha256": null,
+        "digest_matches": false
+      },
+      {
+        "name": "Assets/VOIDReferenceUI/qmldir",
+        "expected_sha256": null,
+        "actual_sha256": null,
+        "digest_matches": false
       }
     ],
-    "file_sha256": "0290b645253552a149a971c6ec607d81e731c74b2d11d4c1692384af8819cd15",
+    "file_sha256": "fe4ba64e7243c893975c12b06568b2d6f27dc2aeb9035cf91d78045ef42ba49f",
     "format": 1,
-    "edition": null,
+    "edition": 4,
     "installation_matches": true,
     "assets_url_matches": true,
+    "full_emulator_ui": false,
     "unexpected_resource_count": 0
   },
   "diagnostic_revision": 2

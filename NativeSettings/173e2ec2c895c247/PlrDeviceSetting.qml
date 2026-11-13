@@ -12,6 +12,9 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+id: voidNativeSettingsPage
+
     objectName: "deviceProfile"
 
     property bool pCompLoaded: false
@@ -54,7 +57,7 @@ Item {
 
     UiColumnLayout {
         anchors.fill: parent
-        spacing: 24
+        spacing: 16
         UiScrollView {
             id: iScrollView
             Layout.fillHeight: true
@@ -65,24 +68,24 @@ Item {
 
             UiColumnLayout {
                 id: iContentLayout
-                width: 520
+                width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
                 Layout.alignment: Qt.AlignTop
-                spacing: 16
+                spacing: 12
                 UiColumnLayout {
                     spacing: 4
                     Layout.fillWidth: true
 
                     Text {
                         text: qsTranslate("QObject", "Device profile")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
 
                     Text {
                         id: iDeviceProfileWarningTxt
                         Layout.fillWidth: true
                         text: qsTranslate("QObject", "Changing this will delete Android framework data.")
-                        font: UiTheme.fonts.bodySmall
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
                         color: UiTheme.colors.warning
                         wrapMode: Text.Wrap
                     }
@@ -128,7 +131,7 @@ Item {
                             Text {
                                 Layout.fillWidth: true
                                 text: qsTranslate("QObject", "There was an error fetching the profiles. Please make sure your internet connection is working.")
-                                font: UiTheme.fonts.bodySmall
+                                font: Qt.font({family:"Segoe UI",pixelSize:10})
                                 color: UiTheme.colors.error
                                 wrapMode: Text.Wrap
                             }
@@ -216,8 +219,8 @@ Item {
                                     spacing: 4
                                     Text {
                                         text: qsTranslate("QObject", "Manufacturer")
-                                        font: UiTheme.fonts.bodySmall
-                                        color: UiTheme.colors.primary30
+                                        font: Qt.font({family:"Segoe UI",pixelSize:10})
+                                        color: "#bdbdc5"
                                         Layout.fillWidth: true
                                     }
                                     UiTextField {
@@ -242,8 +245,8 @@ Item {
                                     Text {
                                         text: qsTranslate("QObject", "Brand")
                                         Layout.fillWidth: true
-                                        font: UiTheme.fonts.bodySmall
-                                        color: UiTheme.colors.primary30
+                                        font: Qt.font({family:"Segoe UI",pixelSize:10})
+                                        color: "#bdbdc5"
                                     }
                                     UiTextField {
                                         id: iDeviceBrandTxt
@@ -266,8 +269,8 @@ Item {
                                     spacing: 4
                                     Text {
                                         text: qsTranslate("QObject", "Model")
-                                        font: UiTheme.fonts.bodySmall
-                                        color: UiTheme.colors.primary30
+                                        font: Qt.font({family:"Segoe UI",pixelSize:10})
+                                        color: "#bdbdc5"
                                         Layout.fillWidth: true
                                     }
                                     UiTextField {
@@ -294,7 +297,7 @@ Item {
                 Rectangle {
                     id: iSeparator1
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
 
@@ -304,8 +307,8 @@ Item {
                     spacing: 8
                     Text {
                         text: qsTranslate("QObject", "Network provider")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
 
                     UiImage {
@@ -344,7 +347,7 @@ Item {
 
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                     visible: plrBackend.getRootAccessEnabled()
                 }
@@ -355,8 +358,8 @@ Item {
                     visible: plrBackend.getRootAccessEnabled()
                     Text {
                         text: qsTranslate("QObject", "Root Access")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
 
                     UiCheckBox {
@@ -371,7 +374,7 @@ Item {
                     Text {
                         Layout.fillWidth: true
                         text: qsTranslate("QObject", "Enabling this may cause game compatibility issues, place your data at risk and may also prevent support from assisting you in the future.")
-                        font: UiTheme.fonts.bodySmall
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
                         color: UiTheme.colors.warning
                         wrapMode: Text.Wrap
                     }
@@ -382,7 +385,7 @@ Item {
             id: iBottomRow
             spacing: 4
             Layout.fillWidth: true
-            Layout.preferredHeight: 36
+            Layout.preferredHeight: 29
 
             UiButton{
                 Layout.alignment: Qt.AlignRight

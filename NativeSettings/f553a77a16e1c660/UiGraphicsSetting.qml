@@ -17,6 +17,9 @@ import DialogButtonModelList 1.0
 import UiDialogWindow 1.0
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+id: voidNativeSettingsPage
+
     property bool pCompLoaded: false
     property bool pEnableSave: false
     property bool pIsVulkanSupported: false
@@ -129,7 +132,7 @@ Item {
 
     UiColumnLayout {
         anchors.fill: parent
-        spacing: 24
+        spacing: 16
         UiScrollView {
             id: iScrollView
             Layout.fillHeight: true
@@ -140,17 +143,17 @@ Item {
 
             UiColumnLayout {
                 id: iContentLayout
-                width: 520
+                width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
                 Layout.alignment: Qt.AlignTop
-                spacing: 16
+                spacing: 12
                 UiColumnLayout {
                     spacing: 12
                     Layout.fillWidth: true
                     visible: uiBackend.isGraphicsEngineSupported(pVmName, "pga")
                     Text {
                         text: qsTranslate("QObject", "Graphics engine mode")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
                     UiRowLayout {
                         Layout.fillWidth: true
@@ -180,7 +183,7 @@ Item {
                 }
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                     visible: uiBackend.isGraphicsEngineSupported(pVmName, "pga")
                 }
@@ -191,8 +194,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Graphics renderer")
-                            font: UiTheme.fonts.bodyLarge
-                            color: UiTheme.colors.primary10
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#eeeef2"
                         }
                         UiImageButton {
                             asset: "MenuHelp"
@@ -220,8 +223,8 @@ Item {
                                 id: iRecommendedTxt
                                 Layout.leftMargin: 22
                                 text: qsTranslate("QObject", "Recommended")
-                                font: UiTheme.fonts.bodySmall
-                                color: pIsVulkanSupported ? UiTheme.colors.primary30 : UiTheme.colors.primary40
+                                font: Qt.font({family:"Segoe UI",pixelSize:10})
+                                color: pIsVulkanSupported ? "#bdbdc5" : UiTheme.colors.primary40
                             }
                         }
                         UiRadioButton {
@@ -244,7 +247,7 @@ Item {
                 }
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
                 UiColumnLayout {
@@ -254,8 +257,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Interface renderer")
-                            font: UiTheme.fonts.bodyLarge
-                            color: UiTheme.colors.primary10
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#eeeef2"
                         }
                         UiImageButton {
                             asset: "MenuHelp"
@@ -273,7 +276,7 @@ Item {
                         textRole: "text"
                         valueRole: "value"
                         pVisibilityRole: "visible"
-                        Layout.preferredWidth: 200
+                        Layout.preferredWidth: 174
                         onActivated: {
                             if (pCompLoaded) {
                                 uiBackend.confSetString("bst.qt_renderer", currentValue)
@@ -284,7 +287,7 @@ Item {
                 }
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                     visible: pParentWindow === "plr"
                 }
@@ -296,8 +299,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "ASTC Textures (Beta)")
-                            font: UiTheme.fonts.bodyLarge
-                            color: UiTheme.colors.primary10
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#eeeef2"
                         }
                         UiImageButton {
                             asset: "MenuHelp"
@@ -313,7 +316,7 @@ Item {
                         pSize: UiTheme.comboBoxes.sizes.medium
                         model: pAstcConfigModel
                         textRole: "display_name"
-                        Layout.preferredWidth: 200
+                        Layout.preferredWidth: 174
                         onActivated: {
                             if (pCompLoaded) {
                                 uiBackend.confSetInstanceString("astc_decoding_mode", pAstcConfigModel.get(currentIndex).name)
@@ -327,7 +330,7 @@ Item {
                         id: iHwAstcNotSuppportedWarningTxt
                         Layout.fillWidth: true
                         text: qsTranslate("QObject", "Hardware decoding is not available, instead Software decoding will be used")
-                        font: UiTheme.fonts.bodySmall
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
                         color: UiTheme.colors.warning
                         wrapMode: Text.Wrap
                         horizontalAlignment: Text.AlignLeft
@@ -335,7 +338,7 @@ Item {
                 }
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                     visible: pParentWindow === "plr"
                 }
@@ -349,8 +352,8 @@ Item {
                             spacing: 8
                             Text {
                                 text: qsTranslate("QObject", "GPU in use")
-                                font: UiTheme.fonts.bodyLarge
-                                color: UiTheme.colors.primary10
+                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                color: "#eeeef2"
                                 horizontalAlignment: Text.AlignLeft
                             }
                             UiImageButton {
@@ -365,8 +368,8 @@ Item {
                         Text {
                             id: iAvailableGpuTxt
                             text: "NVIDIA GeForce RTX 2080Ti"
-                            font: UiTheme.fonts.bodySmall
-                            color: UiTheme.colors.primary30
+                            font: Qt.font({family:"Segoe UI",pixelSize:10})
+                            color: "#bdbdc5"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                         }
@@ -376,8 +379,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Prefer dedicated GPU")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             elide: Text.ElideRight
@@ -397,7 +400,7 @@ Item {
         UiRowLayout {
             spacing: 4
             Layout.fillWidth: true
-            Layout.preferredHeight: 36
+            Layout.preferredHeight: 29
 
             UiImage {
                 asset: "MenuInfo"
@@ -407,8 +410,8 @@ Item {
 
             Text {
                 text: qsTranslate("QObject", "Changes will apply on next launch")
-                font : UiTheme.fonts.bodySmall
-                color: UiTheme.colors.primary20
+                font : Qt.font({family:"Segoe UI",pixelSize:10})
+                color: "#c7c7ce"
                 horizontalAlignment: Text.AlignLeft
                 Layout.fillWidth: true
                 elide: Text.ElideRight

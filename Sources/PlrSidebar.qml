@@ -20,6 +20,7 @@ import DialogButtonModelList 1.0
 import UiDialogWindow 1.0
 import UiFolderDialog 1.0
 import UiQuickWindow 1.0
+import "file:///C:/Program%20Files/BlueStacks_msi5/Assets/VOIDReferenceUI/Navigation.js" as VoidUiNav
 Rectangle {
     // BSI SIDEBAR ANIMATED V2 COMPACT — passive visual asset; native input retained.
 component BsiSidebarInlineVisual: Item {
@@ -56,27 +57,24 @@ objectName: "bsiSidebarInlineRail"
 anchors.fill: parent; mode: "rail" }
 
 id: iSidebar
-
-// VOID OPTIMIZER NATIVE V1 -- additive, native callbacks below unchanged.
-function fOpenVoidOptimizer() {
+// VOID REFERENCE UI V3 SIDEBAR BEGIN
+function fOpenVoidReferenceOptimizer() {
     if (!iAppwin.pIsBootComplete) return
-    if (voidOptimizerLoader.status === Loader.Ready) voidOptimizerLoader.item.toggleFor(iSidebar.Window.window)
-    else voidOptimizerLoader.active = true
-}
-Loader {
-    id: voidOptimizerLoader
-    active: false
-    source: "file:///C:/Program%20Files/BlueStacks_msi5/Assets/VOIDOptimizerPanel.qml"
-    onLoaded: item.toggleFor(iSidebar.Window.window)
-    onStatusChanged: if (status === Loader.Error) console.warn("VOID Optimizer asset missing; copy pack Assets first.")
+    VoidUiNav.request()
+    sidebarSettingClicked()
 }
 Shortcut {
-    sequence: "F9"
-    context: Qt.WindowShortcut
-    autoRepeat: false
+    sequence: "F9"; context: Qt.WindowShortcut; autoRepeat: false
     enabled: iSidebar.visible && iAppwin.pIsBootComplete && uiBackend.pIsShortcutsEnabled
-    onActivated: fOpenVoidOptimizer()
+    onActivated: fOpenVoidReferenceOptimizer()
 }
+Loader {
+    objectName: "voidReferenceSidebarSkinLoader"
+    source: "file:///C:/Program%20Files/BlueStacks_msi5/Assets/VOIDReferenceUI/SidebarSkin.qml"
+    onLoaded: item.host = iSidebar
+}
+// VOID REFERENCE UI V3 SIDEBAR END
+
 objectName: "sidebar"
 property int pSidebarElementSize: 32
 property int pVisibleSidebarElementsCount: 0
@@ -163,19 +161,16 @@ property UiWindowedPopup pScreenRecordWin: null
 property UiWindowedPopup pRecordingCompleteWin: null
 property UiQuickWindow pImapAbortWin: null
 property list<QtObject> pAllSidebarItems: [
-
 PlrSidebarElement {
 pElementId: "voidOptimizer"
 pAsset: "SidebarEcoMode"
 pTooltipText: "VOID Optimizer (F9)"
 pIsEnable: iAppwin.pIsBootComplete
 pVisible: iAppwin.pIsBootComplete
-onPVisibleChanged: Qt.callLater(function() {
-    if (!pVisible && voidOptimizerLoader.item) voidOptimizerLoader.item.hide()
-    iSidebar.fResetSidebar()
-})
-onClicked: fOpenVoidOptimizer()
+onPVisibleChanged: Qt.callLater(iSidebar.fResetSidebar)
+onClicked: fOpenVoidReferenceOptimizer()
 },
+
 PlrSidebarElement {
 pElementId: pFullscreen
 pAsset: "SidebarFullScreen"
@@ -718,6 +713,8 @@ id: iVolumeSliderLayout
 spacing: 4
 color: UiTheme.colors.primary70
 UiImageButton {
+property string pVoidElementId: ""
+
 asset: pIsMuted ? "VolumeMute" : "Volume"
 pImageHeight: 16
 pImageWidth: 16
@@ -792,6 +789,8 @@ horizontalAlignment: Text.AlignLeft
 }
 Item { Layout.fillWidth: true }
 UiImageButton {
+property string pVoidElementId: ""
+
 asset: "MenuHelp"
 pImageHeight: 16
 pImageWidth: 16
@@ -938,6 +937,8 @@ Layout.preferredWidth: childrenRect.width
 Layout.preferredHeight: childrenRect.height
 spacing: 4
 UiImageButton {
+property string pVoidElementId: ""
+
 asset: "MenuHelp"
 pImageHeight: 16
 pImageWidth: 16
@@ -1042,6 +1043,8 @@ opacity: enabled ? 1 : 0.5
 }
 Item { Layout.fillWidth: true }
 UiImageButton {
+property string pVoidElementId: ""
+
 asset: pGameControlsGamepadSelected ? "Keyboard" : "Keyboard_click"
 pDisableClickAndHoveredState: !pGameControlsGamepadSelected
 pImageHeight: 16
@@ -1053,6 +1056,8 @@ kmmBackend.gamepadControlsSelected = false
 }
 }
 UiImageButton {
+property string pVoidElementId: ""
+
 asset: (enabled && pGameControlsGamepadSelected) ? "Gamepad_click" : "Gamepad"
 pDisableClickAndHoveredState: enabled && pGameControlsGamepadSelected
 pImageHeight: 16
@@ -1267,6 +1272,8 @@ flow: Flow.TopToBottom
 Repeater {
 model: pSidebarItems
 delegate: UiImageButton {
+property string pVoidElementId: model.modelData.pElementId
+
 Component.onCompleted: if(visible) pKebabMenuElementsCount++
 asset: model.modelData.pAsset
 extn: model.modelData.pExtn
@@ -1399,6 +1406,8 @@ horizontalAlignment: Text.AlignLeft
 }
 Item { Layout.fillWidth: true }
 UiImageButton {
+property string pVoidElementId: ""
+
 asset: "AccountLoggedIn"
 pImageWidth: 16
 pImageHeight: 16
@@ -1488,6 +1497,8 @@ nowggBackend.handleMomentsToggled(checked)
 }
 }
 UiImageButton {
+property string pVoidElementId: ""
+
 Layout.alignment: Qt.AlignRight | Qt.AlignBottom
 asset: "MenuHelp"
 pImageWidth: 16
@@ -1560,6 +1571,8 @@ nowggBackend.startRecording(false)
 }
 }
 UiImageButton {
+property string pVoidElementId: ""
+
 Layout.alignment: Qt.AlignBottom
 asset: "MenuHelp"
 pImageWidth: 16
@@ -1716,6 +1729,8 @@ plrBackend.reloadConfInAllInstances()
 }
 }
 UiImageButton {
+property string pVoidElementId: ""
+
 Layout.alignment: Qt.AlignRight | Qt.AlignBottom
 asset: "MenuHelp"
 pImageWidth: 16
@@ -1810,6 +1825,8 @@ model.modelData.positionChanged()
 }
 }
 UiImageButton {
+property string pVoidElementId: model.modelData.pElementId
+
 width: pSidebarElementSize
 height: pSidebarElementSize
 
@@ -1895,6 +1912,8 @@ running: model.modelData.pLoaderRunning
 }
 }
 UiImageButton {
+property string pVoidElementId: "kebab"
+
 width: pSidebarElementSize
 height: pSidebarElementSize
 
@@ -1936,6 +1955,8 @@ Item {
 Layout.fillHeight: true
 }
 UiImageButton {
+property string pVoidElementId: ""
+
 width: pSidebarElementSize
 height: pSidebarElementSize
 
@@ -1972,6 +1993,8 @@ plrBackend.onDiscrodButtonClicked()
 }
 }
 UiImageButton {
+property string pVoidElementId: ""
+
 width: pSidebarElementSize
 height: pSidebarElementSize
 
@@ -2014,6 +2037,8 @@ Layout.preferredWidth: pSidebarElementSize
 Layout.preferredHeight: pSidebarElementSize
 Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
 UiImageButton {
+property string pVoidElementId: ""
+
 width: pSidebarElementSize
 height: pSidebarElementSize
 
@@ -2053,6 +2078,8 @@ anchors.rightMargin: 4
 }
 }
 UiImageButton {
+property string pVoidElementId: "back"
+
 width: pSidebarElementSize
 height: pSidebarElementSize
 
@@ -2084,6 +2111,8 @@ UiShortcutToolTip.shortcutMap: [{ value: "go_back" }]
 onClicked: plrBackend.onBackClicked()
 }
 UiImageButton {
+property string pVoidElementId: "home"
+
 width: pSidebarElementSize
 height: pSidebarElementSize
 
@@ -2115,6 +2144,8 @@ UiShortcutToolTip.shortcutMap: [{ value: "go_home" }]
 onClicked: plrBackend.onHomeClicked()
 }
 UiImageButton {
+property string pVoidElementId: "recent"
+
 width: pSidebarElementSize
 height: pSidebarElementSize
 

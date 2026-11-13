@@ -17,6 +17,9 @@ import UiToolTipControl 1.0
 import UiFolderDialog 1.0
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+id: voidNativeSettingsPage
+
     objectName: "gamepadSetting"
 
     property bool pCompLoaded: false
@@ -60,7 +63,7 @@ Item {
 
     UiColumnLayout {
         anchors.fill: parent
-        spacing: 24
+        spacing: 16
         UiScrollView {
             id: iScrollView
             Layout.fillHeight: true
@@ -71,17 +74,17 @@ Item {
 
             UiColumnLayout {
                 id: iContentLayout
-                width: 520
+                width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
                 Layout.alignment: Qt.AlignTop
-                spacing: 16
+                spacing: 12
 
                 UiColumnLayout {
                     Layout.fillWidth: true
                     spacing: 12
                     Text {
                         text: qsTranslate("QObject", "Gamepad detection")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                         horizontalAlignment: Text.AlignLeft
                     }
                     UiRowLayout {
@@ -89,8 +92,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Allow %1 to connect with your gamepad").arg(uiBackend.productName)
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -107,7 +110,7 @@ Item {
 
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
 
@@ -120,8 +123,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Gamepad input settings")
-                            font: UiTheme.fonts.bodyLarge
-                            color: UiTheme.colors.primary10
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#eeeef2"
                             horizontalAlignment: Text.AlignLeft
                         }
                         UiImageButton {
@@ -138,8 +141,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Allow games direct access to your gamepad")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -161,7 +164,7 @@ Item {
                 }
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
                 UiColumnLayout {
@@ -171,8 +174,8 @@ Item {
                     opacity: enabled ? 1 : 0.6
                     Text {
                         text: qsTranslate("QObject", "Gamepad vibration")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                         horizontalAlignment: Text.AlignLeft
                     }
                     UiRowLayout {
@@ -180,8 +183,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Enable gamepad vibration")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             wrapMode: Text.Wrap
@@ -201,7 +204,7 @@ Item {
             id: iBottomRow
             spacing: 4
             Layout.fillWidth: true
-            Layout.preferredHeight: 36
+            Layout.preferredHeight: 29
 
             UiButton{
                 Layout.alignment: Qt.AlignRight

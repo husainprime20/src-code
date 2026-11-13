@@ -15,6 +15,9 @@ import UiDialogWindow 1.0
 import UiToolTipControl 1.0
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+id: voidNativeSettingsPage
+
     objectName: "advanceSetting"
 
     property bool pCompLoaded: false
@@ -89,7 +92,7 @@ Item {
 
     UiColumnLayout {
         anchors.fill: parent
-        spacing: 24
+        spacing: 16
         UiScrollView {
             id: iScrollView
             Layout.fillHeight: true
@@ -100,9 +103,9 @@ Item {
 
             UiColumnLayout {
                 id: iContentLayout
-                width: 520
+                width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
                 Layout.alignment: Qt.AlignTop
-                spacing: 16
+                spacing: 12
                 visible: uiBackend.oem !== "wmx"
                 UiColumnLayout{
                     Layout.fillWidth: true
@@ -111,8 +114,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Application Binary Interface (ABI)")
-                            font: UiTheme.fonts.bodyLarge
-                            color: UiTheme.colors.primary10
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#eeeef2"
                         }
                         UiImageButton {
                             asset: "MenuHelp"
@@ -125,8 +128,8 @@ Item {
                     }
                     Text {
                         text: qsTranslate("QObject", uiBackend.getAbiList())
-                        font: UiTheme.fonts.bodyMedium
-                        color: UiTheme.colors.primary20
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#c7c7ce"
                         horizontalAlignment: Text.AlignLeft
                         Layout.fillWidth: true
                         elide:Text.ElideRight
@@ -136,7 +139,7 @@ Item {
 
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
                 UiColumnLayout {
@@ -145,16 +148,16 @@ Item {
                     visible: uiBackend.oem !== "wmx"
                     Text {
                         text: qsTranslate("QObject", "Android Debug Bridge (ADB)")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
                     UiRowLayout {
                         Layout.fillWidth: true
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Connect to Android at 127.0.0.1:%1").arg(uiBackend.confGetInstanceI32("status.adb_port"))
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             elide:Text.ElideRight
@@ -170,14 +173,14 @@ Item {
                     Text {
                         Layout.fillWidth: true
                         text: qsTranslate("QObject", "Turn off ADB after debugging. Leaving it on can compromise the security of your system.")
-                        font: UiTheme.fonts.bodySmall
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
                         color: UiTheme.colors.warning
                         wrapMode: Text.Wrap
                     }
                 }
                 Rectangle {
                     Layout.preferredHeight: 1
-                    color: UiTheme.colors.seperator
+                    color: "#303034"
                     Layout.fillWidth: true
                 }
                 UiColumnLayout {
@@ -186,16 +189,16 @@ Item {
                     visible: uiBackend.oem !== "wmx"
                     Text {
                         text: qsTranslate("QObject", "Input debugging")
-                        font: UiTheme.fonts.bodyLarge
-                        color: UiTheme.colors.primary10
+                        font: Qt.font({family:"Segoe UI",pixelSize:12})
+                        color: "#eeeef2"
                     }
                     UiRowLayout {
                         Layout.fillWidth: true
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Show visual feedback for taps")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             elide: Text.ElideRight
@@ -212,8 +215,8 @@ Item {
                         spacing: 8
                         Text {
                             text: qsTranslate("QObject", "Show pointer location for current touch data")
-                            font: UiTheme.fonts.bodyMedium
-                            color: UiTheme.colors.primary20
+                            font: Qt.font({family:"Segoe UI",pixelSize:12})
+                            color: "#c7c7ce"
                             horizontalAlignment: Text.AlignLeft
                             Layout.fillWidth: true
                             elide: Text.ElideRight
@@ -228,7 +231,7 @@ Item {
                     Text {
                         Layout.fillWidth: true
                         text: qsTranslate("QObject", "Enabling this setting can have adverse effects on your gameplay. Turn it off after debugging.")
-                        font: UiTheme.fonts.bodySmall
+                        font: Qt.font({family:"Segoe UI",pixelSize:10})
                         color: UiTheme.colors.warning
                         wrapMode: Text.Wrap
                     }
@@ -238,7 +241,7 @@ Item {
         UiRowLayout {
             spacing: 4
             Layout.fillWidth: true
-            Layout.preferredHeight: 36
+            Layout.preferredHeight: 29
 
             UiImage {
                 asset: "MenuInfo"
@@ -248,8 +251,8 @@ Item {
 
             Text {
                 text: qsTranslate("QObject", "Some changes will apply on next launch")
-                font : UiTheme.fonts.bodySmall
-                color: UiTheme.colors.primary20
+                font : Qt.font({family:"Segoe UI",pixelSize:10})
+                color: "#c7c7ce"
                 horizontalAlignment: Text.AlignLeft
                 Layout.fillWidth: true
                 elide: Text.ElideRight

@@ -16,6 +16,9 @@ import UiDialogWindow 1.0
 import UiHelper 1.0
 
 Item {
+// VOID NATIVE SETTINGS V4 — layout only; native callbacks retained
+id: voidNativeSettingsPage
+
     objectName: "shortcutSettings"
 
     property bool pEnableSave: false
@@ -176,8 +179,8 @@ Item {
                 Layout.fillWidth: true
                 horizontalAlignment: Text.AlignLeft
                 text: qsTranslate("QObject", "Type a sequence of keys to assign it as a shortcut for the relevant action")
-                font: UiTheme.fonts.bodySmall
-                color: UiTheme.colors.primary10
+                font: Qt.font({family:"Segoe UI",pixelSize:10})
+                color: "#eeeef2"
                 wrapMode: Text.Wrap
             }
         }
@@ -272,7 +275,7 @@ Item {
 
     UiColumnLayout {
         anchors.fill: parent
-        spacing: 24
+        spacing: 16
         UiScrollView {
             id: iScrollView
             Layout.fillHeight: true
@@ -283,16 +286,16 @@ Item {
 
             UiColumnLayout {
                 id: iContentLayout
-                width: 520
+                width: Math.min(460, Math.max(0, voidNativeSettingsPage.width))
                 Layout.alignment: Qt.AlignTop
-                spacing: 16
+                spacing: 12
 
                 Repeater {
                     id: iShortcutsRepeater
                     model: pShortcutsModel
                     delegate : Component {
                         UiColumnLayout {
-                            spacing: 16
+                            spacing: 12
                             Layout.fillWidth: true
 
                             UiColumnLayout {
@@ -301,8 +304,8 @@ Item {
 
                                 Text {
                                     text: modelData.categoryName
-                                    font: UiTheme.fonts.bodyLarge
-                                    color: UiTheme.colors.primary10
+                                    font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                    color: "#eeeef2"
                                 }
 
                                 Repeater {
@@ -317,8 +320,8 @@ Item {
                                             spacing: 8
                                             Text {
                                                 text: modelData.text
-                                                font: UiTheme.fonts.bodyMedium
-                                                color: UiTheme.colors.primary20
+                                                font: Qt.font({family:"Segoe UI",pixelSize:12})
+                                                color: "#c7c7ce"
                                                 horizontalAlignment: Text.AlignLeft
                                                 Layout.fillWidth: true
                                                 elide: Text.ElideRight
@@ -342,7 +345,7 @@ Item {
                             Rectangle {
                                 visible: index !== (pShortcutsModel.length - 1)
                                 Layout.preferredHeight: 1
-                                color: UiTheme.colors.seperator
+                                color: "#303034"
                                 Layout.fillWidth: true
                             }
                         }
@@ -354,7 +357,7 @@ Item {
         // Footer
         UiRowLayout {
             Layout.fillWidth: true
-            Layout.preferredHeight: 36
+            Layout.preferredHeight: 29
 
             UiRowLayout {
                 id: iHelpBlock
@@ -377,14 +380,14 @@ Item {
                 }
                 Text {
                     text: qsTranslate("QObject", "Help")
-                    font : UiTheme.fonts.bodySmall
-                    color: UiTheme.colors.primary20
+                    font : Qt.font({family:"Segoe UI",pixelSize:10})
+                    color: "#c7c7ce"
                 }
             }
 
             UiRowLayout {
                 Layout.alignment: Qt.AlignRight
-                spacing: 16
+                spacing: 12
                 UiButton {
                     pSize: UiTheme.buttons.sizes.medium
                     pColor: UiTheme.buttons.colors.secondary
